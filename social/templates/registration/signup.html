@@ -1,0 +1,68 @@
+{% extends 'social/base.html' %}
+
+{% block  title%}
+Login page
+{% endblock  %}
+
+
+{% block content %}
+
+<div>
+  <style>
+    h5{
+      color:red;
+    }
+    body{
+      background-color: #06283D;
+    }
+  </style>
+  {% for message in messages%}
+  <h5>{{message}}</h5>
+  {%endfor%}
+</div>
+<form method="post">
+{% csrf_token %}
+<div class="container mt-5 ">
+    <div class="row mx-auto justify-content-center">
+
+      <div class="col-md-4 ">
+        <h2 class="text-white bg-dark text-center p-3">Sign Up</h2>
+        <br>
+
+        <form action="/" method="post">
+        {%csrf_token%}
+        <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter the user Name" name="username" required> 
+          </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter your Email" name="email"  required> 
+        </div>
+  
+          <br>
+        
+        <div class="form-group">
+            <input type="password" class="form-control mt-2" placeholder="Enter your password" name="password" required> 
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="password1" class="form-control mt-2" placeholder="Confirm password" name="password1" required> 
+        </div>
+
+<br>
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Login</button>
+        
+        </div>
+        </form>
+        <br>
+        <p>Already have an account? Login <a href="/login">Here</a></p>
+    </div>
+
+
+    </div>
+
+</div>
+
+</form>
+{% endblock content %}

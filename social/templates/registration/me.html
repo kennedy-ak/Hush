@@ -1,0 +1,50 @@
+<div class="container mt-5 ">
+    <div class="row">
+
+      <div class="col-md-4 ">
+        <h2 class="text-white bg-dark text-center p-3">Update Student Detail</h2>
+        <br>
+      
+        <form action="/update/{{d.id}}" method="post">
+          {%csrf_token%}
+          <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter the Student Name" name="name" value="{{d.name}}" required> 
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter the Student Email" name="email" value="{{d.email}}" required> 
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="number" class="form-control mt-2" placeholder="Enter the Student Age" name="age" value="{{d.age}}" required> 
+          </div>
+          <br>
+          
+          <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter the Student Level" name="level" value="{{d.level}}" required> 
+          </div>
+          <br>
+          <!-- <div class="form-control">
+            <select name="form-control" id="gender" name="gender" required>
+              <option  selected>Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div> -->
+          <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter the Student gender" name="gender" value="{{d.gender}}" required> 
+          </div>
+          <br>
+          <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Update</button>
+         
+          </div>
+        </form>
+        
+      </div>
+ 
+      
+
+    </div>
+
+  </div>

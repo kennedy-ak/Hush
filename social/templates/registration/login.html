@@ -1,0 +1,48 @@
+{% extends 'social/base.html' %}
+
+{% block  title%}
+Login page
+{% endblock  %}
+
+
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<div class="container mt-5 ">
+    <div class="row mx-auto justify-content-center">
+
+      <div class="col-md-4 ">
+        <h2 class="text-white bg-dark text-center p-3">Login</h2>
+        <br>
+
+        <form action="/" method="post">
+        {%csrf_token%}
+
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control mt-2"placeholder="Enter your Email" name="email"  required> 
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="password" class="form-control mt-2" placeholder="Enter your password" name="password" required> 
+        </div>
+        <br>
+
+
+<br>
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Login</button>
+        
+        </div>
+        </form>
+        <br>
+        <p>Dont have an account? Create one <a href="/signup">Here</a></p>
+    </div>
+
+
+    </div>
+
+</div>
+
+</form>
+{% endblock content %}
