@@ -35,10 +35,13 @@ def signup(request):
                 else:
                     user = User.objects.create_user(username=username,email=email,password=password1)
                     user.save()
-            else:
-           
+                    return redirect('home')
+            else:           
                 messages.info(request, 'Password Not Matching')
                 return redirect('signup')
-        else:
-     
+        else:     
             return render(request, "registration/signup.html")
+        
+
+
+
